@@ -1,0 +1,116 @@
+#testimonials {
+    $width-size:70vw;
+    background-color: $bg-color;
+    margin: px-to-rem(200px) 0;
+    position: relative;
+    // padding: 400px 0;
+
+    &::before,&::after{
+        content: "";
+        background-color: $bg-color;
+        height: 12vh;
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        border-right: $width-size solid white;
+        border-bottom: none;
+    }
+
+    &::before{
+        clip-path: polygon(0 100%,100% 0,100% 100%,0 100%);
+        bottom: 100%;
+    }
+    &::after{
+        clip-path: polygon(0 100%,100% 0,100% 0 , 0 0);
+        top: 100%;
+    }
+
+
+    #testimonial-bg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        width: $width-size;
+    }
+
+    article{
+        $color1: #0d77bb;
+        $alt-color: #184a6a;
+        position: relative;
+        z-index: 20;
+        padding: 108px 0px 76px;
+        text-align: center;
+
+        h2{
+            text-transform: uppercase;
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+        h5{
+            font-size: 24px;
+            span{
+                font-size: 36px;
+                color: $color1;
+            }
+        }
+
+        #reviews{
+            display: flex;
+            color: white;
+            margin: px-to-rem(32px) px-to-rem(24px);
+            .review{
+                background-color: $color1;
+                margin: 0 px-to-rem(18px);
+                padding: px-to-rem(24px);
+                .reviewer-details{
+                    display: flex;
+                    align-items: center;
+                    figure{
+                        border-radius: 50%;
+                        background-size: cover;
+                        height: px-to-rem(100px);
+                        width: px-to-rem(100px); 
+                    }
+                    .details{
+                        margin-left: px-to-rem(18px);
+                        letter-spacing: 1px;
+                        .name{
+                            font-size: px-to-rem(18px);
+                            text-transform: uppercase;
+                            margin-bottom: px-to-rem(6px);
+                        }
+                        .from{
+                            font-size: px-to-rem(14px);
+                            text-align: left ;
+                        }
+                    }
+                } 
+                .review-text{
+                    font-size: px-to-rem(16px);
+                    margin-top: px-to-rem(14px);
+                    text-align: left;
+                    line-height: 240%;
+
+                }
+            }
+            .review:nth-of-type(1) figure{ background-image: url("../images/face-1.jpg"); }
+            .review:nth-of-type(2) figure{ background-image: url(get-image("face-2.jpg")); }
+            .review:nth-of-type(3) figure{ background-image: url(get-image("face-3.jpg")); }
+            .review:nth-of-type(2) { background-color: $alt-color; }
+            
+
+        }
+        a{
+            display: block;
+            text-align: center;
+            margin-top: px-to-rem(8px);
+            color: $color1;
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+
+}
